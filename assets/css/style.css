@@ -2009,6 +2009,7 @@ body.nav-locked { overflow: hidden; }
 .news--wide { flex-direction: row; }
 .news--wide .news__media { flex: 0 0 46%; aspect-ratio: auto; }
 .news--wide .news__title { font-size: 21px; }
+.news--compact .news__title { font-size: 13px; }
 .news--wide .news__body { padding: 18px 20px 20px; }
 
 /* --- responsive ---------------------------------------------------------- */
@@ -2063,6 +2064,11 @@ body.nav-locked { overflow: hidden; }
 .boxed__head > i svg { width: 19px; height: 19px; }
 .boxed__head h2 { font-size: 23px; font-weight: 700; color: var(--ink-title); }
 .boxed__head p { flex: 1 0 100%; margin: -4px 0 0 45px; font-size: 15px; color: #4b6a97; font-weight: 400; }
+.boxed__head + .psec__lead { margin-top: 0; }
+.boxed__head--row { justify-content: space-between; }
+.boxed__head--row > span { display: flex; align-items: center; gap: 11px; }
+.boxed__head--row .link-more { margin-top: 0; }
+.boxed__head--sub { margin-top: 24px; }
 
 /* --- app tile (image + caption row with icon) ---------------------------- */
 .app {
