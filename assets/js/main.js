@@ -99,6 +99,8 @@
     Promise.all(slots.map(include)).then(function () {
       initNav(document);
       markCurrent(document);
+      var yearEl = document.getElementById("footer-year");
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
     });
   });
 })();

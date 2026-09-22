@@ -681,7 +681,7 @@ body.nav-locked { overflow: hidden; }
 
 .footer__inner {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 0.8fr;
+  grid-template-columns: 1.1fr 0.8fr 1.1fr 0.8fr;
   gap: 32px;
   min-height: 172px;
   padding: 32px 0 36px;
@@ -700,8 +700,20 @@ body.nav-locked { overflow: hidden; }
 }
 
 .footer__col--brand { padding-left: 0; }
+.footer__col--links { padding-left: 32px; }
 .footer__col--contact { padding-left: 32px; }
 .footer__col--cta { padding-left: 32px; text-align: right; }
+
+.footer__tagline { margin-top: 14px; max-width: 240px; font-size: 14px; line-height: 20px; color: #a9c6e8; }
+
+.footer__label--head { display: block; margin-bottom: 14px; font-size: 14px; font-weight: 600; color: #fff; }
+
+.footer__links { display: flex; flex-direction: column; gap: 10px; }
+.footer__links a { font-size: 14px; color: #c0d8f0; }
+.footer__links a:hover { color: var(--cyan-300); }
+
+.footer__bottom { border-top: 1px solid rgba(120, 175, 225, .25); }
+.footer__bottom-inner { padding: 16px 0; font-size: 13px; color: #90aed4; text-align: center; }
 
 .site-footer .brand { gap: 16px; margin-top: 0; }
 .site-footer .brand__mark { width: 42px; height: 50px; }
@@ -840,6 +852,7 @@ body.nav-locked { overflow: hidden; }
   .whyus__item:nth-child(odd)::before { display: none; }
 
   .footer__inner { grid-template-columns: 1fr 1fr; gap: 28px 0; padding: 28px 0 32px; }
+  .footer__col--links, .footer__col--contact { padding-left: 0; }
   .footer__col--cta { grid-column: 1 / -1; padding-left: 0; text-align: left; }
   .footer__col--cta::before { display: none; }
   .footer__cta-text { margin-left: 0; }
@@ -894,7 +907,7 @@ body.nav-locked { overflow: hidden; }
 
   .footer__inner { grid-template-columns: 1fr; gap: 24px; padding: 24px 0 28px; }
   .footer__col + .footer__col::before { display: none; }
-  .footer__col--contact { padding-left: 0; }
+  .footer__col--links, .footer__col--contact { padding-left: 0; }
   .footer__col--cta { text-align: left; }
   .footer__cta-text { margin-left: 0; }
   .footer__col--cta .btn { margin-left: 0; }
