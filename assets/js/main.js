@@ -65,6 +65,67 @@
     });
   }
 
+  function initProjectFilter(root) {
+    var filterPanel = root.getElementById("prj-filters");
+    var grid = root.getElementById("prj-grid");
+    var empty = root.getElementById("prj-empty");
+    if (!filterPanel || !grid) return;
+
+    var catBoxes = Array.prototype.slice.call(filterPanel.querySelectorAll('input[name="cat"]'));
+    var allBox = filterPanel.querySelector('input[name="cat"][value="all"]');
+    var citySelect = root.getElementById("f-city");
+    var yearSelect = root.getElementById("f-year");
+    var submitBtn = filterPanel.querySelector("button");
+    var cards = Array.prototype.slice.call(grid.querySelectorAll(".prj"));
+
+    function apply() {
+      var checked = catBoxes.filter(function (box) {
+        return box.checked && box.value !== "all";
+      }).map(function (box) { return box.value; });
+
+      var city = citySelect && citySelect.value !== "Tất cả" ? citySelect.value : "";
+      var year = yearSelect && yearSelect.value !== "Tất cả" ? yearSelect.value : "";
+
+      var visibleCount = 0;
+      cards.forEach(function (card) {
+        var matchCat = checked.length === 0 || checked.indexOf(card.getAttribute("data-category")) !== -1;
+        var matchCity = !city || card.getAttribute("data-city") === city;
+        var matchYear = !year || card.getAttribute("data-year") === year;
+        var show = matchCat && matchCity && matchYear;
+        card.hidden = !show;
+        if (show) visibleCount++;
+      });
+
+      if (empty) empty.hidden = visibleCount !== 0;
+    }
+
+    catBoxes.forEach(function (box) {
+      box.addEventListener("change", function () {
+        if (box.value === "all") {
+          if (box.checked) {
+            catBoxes.forEach(function (other) {
+              if (other !== box) other.checked = false;
+            });
+          }
+        } else if (box.checked && allBox) {
+          allBox.checked = false;
+        }
+        var anyChecked = catBoxes.some(function (b) { return b.checked; });
+        if (!anyChecked && allBox) allBox.checked = true;
+        apply();
+      });
+    });
+
+    if (citySelect) citySelect.addEventListener("change", apply);
+    if (yearSelect) yearSelect.addEventListener("change", apply);
+    if (submitBtn) {
+      submitBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        apply();
+      });
+    }
+  }
+
   function markCurrent(root) {
     var raw = location.pathname.split("/").pop() || "index.html";
     // Hỗ trợ cả URL sạch (/lien-he) và URL có .html (/lien-he.html) do cleanUrls
@@ -99,6 +160,7 @@
     Promise.all(slots.map(include)).then(function () {
       initNav(document);
       markCurrent(document);
+      initProjectFilter(document);
       var yearEl = document.getElementById("footer-year");
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
     });

@@ -27,24 +27,35 @@
       </ul>
     </div>
   </section>
+  <section class="psec">
+    <div class="container">
+      <div class="stat-grid">
+        <div class="stat"><b>500+</b><span>Dự án đã bàn giao</span></div>
+        <div class="stat"><b>20.000+</b><span>Camera đã lắp đặt</span></div>
+        <div class="stat"><b>98%</b><span>Khách hàng quay lại</span></div>
+        <div class="stat"><b>24/7</b><span>Hỗ trợ kỹ thuật</span></div>
+      </div>
+    </div>
+  </section>
   <section class="psec psec--tint psec--last">
     <div class="container">
       <div class="with-aside">
         <aside>
-          <div class="aside-card">
+          <div class="aside-card" id="prj-filters">
             <h3 class="aside-card__head"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.6"/><path d="m16 16 4.4 4.4"/></svg>Lọc dự án</h3>
             <h4>Danh mục dự án</h4>
-          <label class="check"><input type="checkbox" name="cat" checked><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Tất cả dự án</label>
-          <label class="check"><input type="checkbox" name="cat"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Tòa nhà - Chung cư</label>
-          <label class="check"><input type="checkbox" name="cat"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Khu đô thị</label>
-          <label class="check"><input type="checkbox" name="cat"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Văn phòng</label>
-          <label class="check"><input type="checkbox" name="cat"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Nhà máy - KCN</label>
-          <label class="check"><input type="checkbox" name="cat"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Trường học</label>
-          <label class="check"><input type="checkbox" name="cat"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Bệnh viện</label>
-          <label class="check"><input type="checkbox" name="cat"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Khác</label>
+          <label class="check"><input type="checkbox" name="cat" value="all" checked><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Tất cả dự án</label>
+          <label class="check"><input type="checkbox" name="cat" value="chung-cu"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Tòa nhà - Chung cư</label>
+          <label class="check"><input type="checkbox" name="cat" value="do-thi"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Khu đô thị</label>
+          <label class="check"><input type="checkbox" name="cat" value="van-phong"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Văn phòng</label>
+          <label class="check"><input type="checkbox" name="cat" value="nha-may"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Nhà máy - KCN</label>
+          <label class="check"><input type="checkbox" name="cat" value="truong-hoc"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Trường học</label>
+          <label class="check"><input type="checkbox" name="cat" value="ngan-hang"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Ngân hàng</label>
+          <label class="check"><input type="checkbox" name="cat" value="benh-vien"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Bệnh viện</label>
+          <label class="check"><input type="checkbox" name="cat" value="khac"><i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.6 12.6 4.8 4.8 10-10.8"/></svg></i>Khác</label>
             <h4>Tỉnh/Thành phố</h4>
             <p class="field field--select"><label class="sr-only" for="f-city">Tỉnh/Thành phố</label>
-              <select id="f-city"><option>Tất cả</option><option>Hà Nội</option><option>TP. Hồ Chí Minh</option><option>Hưng Yên</option><option>Bắc Ninh</option></select></p>
+              <select id="f-city"><option>Tất cả</option><option>Hà Nội</option><option>Hưng Yên</option><option>Bắc Ninh</option></select></p>
             <h4>Năm triển khai</h4>
             <p class="field field--select"><label class="sr-only" for="f-year">Năm triển khai</label>
               <select id="f-year"><option>Tất cả</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option></select></p>
@@ -59,10 +70,11 @@
         <div>
           <div class="psec__head psec__head--row">
             <h2 class="psec__title"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3Z"/></svg>Dự án nổi bật</h2>
-            <a class="link-more" href="lien-he.html">Xem tất cả dự án <i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></i></a>
+            <a class="link-more" href="lien-he.html">Tư vấn dự án tương tự <i><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></i></a>
           </div>
-          <div class="grid grid--3">
-          <article class="prj">
+          <p class="psec__lead">9 dự án tiêu biểu trong hơn 500 dự án Cameramienbac đã triển khai trên toàn miền Bắc.</p>
+          <div class="grid grid--3" id="prj-grid">
+          <article class="prj" data-category="chung-cu" data-city="Hà Nội" data-year="2023">
             <div class="prj__media">
               <img src="assets/images/prj-1.jpg" alt="Tòa nhà Thông Minh Vinhomes Ocean Park" loading="lazy">
               <span class="prj__tag"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.4" y="3.4" width="15.2" height="17.2" rx="1.4"/><path d="M8 7.4h2.6M13.4 7.4H16M8 11.4h2.6M13.4 11.4H16M8 15.4h2.6M13.4 15.4H16"/></svg>Chung cư</span>
@@ -79,7 +91,7 @@
               <a class="btn" href="lien-he.html">Xem chi tiết <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
             </div>
           </article>
-          <article class="prj">
+          <article class="prj" data-category="van-phong" data-city="Hà Nội" data-year="2023">
             <div class="prj__media">
               <img src="assets/images/prj-2.jpg" alt="Trụ sở Tập đoàn FPT" loading="lazy">
               <span class="prj__tag"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.4" y="3.4" width="15.2" height="17.2" rx="1.4"/><path d="M8 7.4h2.4M13.6 7.4H16M8 11.4h2.4M13.6 11.4H16M8 15.4h2.4M13.6 15.4H16"/></svg>Văn phòng</span>
@@ -96,7 +108,7 @@
               <a class="btn" href="lien-he.html">Xem chi tiết <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
             </div>
           </article>
-          <article class="prj">
+          <article class="prj" data-category="nha-may" data-city="Hà Nội" data-year="2022">
             <div class="prj__media">
               <img src="assets/images/prj-3.jpg" alt="KCN Bắc Thăng Long" loading="lazy">
               <span class="prj__tag"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.8 20.6V10l6 3.6V10l6 3.6V6.4h6.4v14.2H2.8Z"/></svg>Nhà máy - KCN</span>
@@ -113,7 +125,7 @@
               <a class="btn" href="lien-he.html">Xem chi tiết <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
             </div>
           </article>
-          <article class="prj">
+          <article class="prj" data-category="truong-hoc" data-city="Hà Nội" data-year="2022">
             <div class="prj__media">
               <img src="assets/images/prj-4.jpg" alt="Trường THPT Chuyên Hà Nội – Amsterdam" loading="lazy">
               <span class="prj__tag"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4 1.8 8.2 12 13l10.2-4.8L12 3.4Z"/><path d="M5.6 10.6v4.8c0 1.9 2.9 3.4 6.4 3.4s6.4-1.5 6.4-3.4v-4.8"/></svg>Trường học</span>
@@ -130,7 +142,7 @@
               <a class="btn" href="lien-he.html">Xem chi tiết <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
             </div>
           </article>
-          <article class="prj">
+          <article class="prj" data-category="do-thi" data-city="Hưng Yên" data-year="2021">
             <div class="prj__media">
               <img src="assets/images/prj-5.jpg" alt="Khu đô thị Ecopark" loading="lazy">
               <span class="prj__tag"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.8 20.6h18.4"/><rect x="3.8" y="9.4" width="5" height="11.2"/><rect x="9.8" y="4.4" width="5" height="16.2"/><rect x="15.8" y="12.4" width="4.4" height="8.2"/></svg>Khu đô thị</span>
@@ -147,7 +159,7 @@
               <a class="btn" href="lien-he.html">Xem chi tiết <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
             </div>
           </article>
-          <article class="prj">
+          <article class="prj" data-category="ngan-hang" data-city="Hà Nội" data-year="2019">
             <div class="prj__media">
               <img src="assets/images/prj-6.jpg" alt="Ngân hàng BIDV – Chi nhánh Thái Hà" loading="lazy">
               <span class="prj__tag"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.2 9.4 12 4.2l8.8 5.2"/><path d="M5.4 9.4v9.2M9.8 9.4v9.2M14.2 9.4v9.2M18.6 9.4v9.2M2.8 20.6h18.4"/></svg>Ngân hàng</span>
@@ -164,7 +176,7 @@
               <a class="btn" href="lien-he.html">Xem chi tiết <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
             </div>
           </article>
-          <article class="prj">
+          <article class="prj" data-category="benh-vien" data-city="Hà Nội" data-year="2020">
             <div class="prj__media">
               <img src="assets/images/prj-7.jpg" alt="Bệnh viện Bạch Mai" loading="lazy">
               <span class="prj__tag"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4.4" width="16" height="16.2" rx="2"/><path d="M12 8.6v7.4M8.3 12.3h7.4"/></svg>Bệnh viện</span>
@@ -181,7 +193,7 @@
               <a class="btn" href="lien-he.html">Xem chi tiết <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
             </div>
           </article>
-          <article class="prj">
+          <article class="prj" data-category="truong-hoc" data-city="Hà Nội" data-year="2020">
             <div class="prj__media">
               <img src="assets/images/prj-8.jpg" alt="Đại học Quốc gia Hà Nội" loading="lazy">
               <span class="prj__tag"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.4 1.8 8.2 12 13l10.2-4.8L12 3.4Z"/><path d="M5.6 10.6v4.8c0 1.9 2.9 3.4 6.4 3.4s6.4-1.5 6.4-3.4v-4.8"/></svg>Trường học</span>
@@ -198,7 +210,7 @@
               <a class="btn" href="lien-he.html">Xem chi tiết <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
             </div>
           </article>
-          <article class="prj">
+          <article class="prj" data-category="nha-may" data-city="Bắc Ninh" data-year="2019">
             <div class="prj__media">
               <img src="assets/images/prj-9.jpg" alt="Nhà máy Samsung Bắc Ninh" loading="lazy">
               <span class="prj__tag"><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.8 20.6V10l6 3.6V10l6 3.6V6.4h6.4v14.2H2.8Z"/></svg>Nhà máy - KCN</span>
@@ -215,6 +227,44 @@
               <a class="btn" href="lien-he.html">Xem chi tiết <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
             </div>
           </article>
+          </div>
+          <p class="prj-empty" id="prj-empty" hidden>Không tìm thấy dự án phù hợp với bộ lọc đã chọn. Vui lòng thử tiêu chí khác hoặc <a href="lien-he.html">liên hệ trực tiếp</a> để được tư vấn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="psec psec--last">
+    <div class="container">
+      <div class="slogan">
+        <div class="slogan__inner">
+          <span class="brand"><svg class="brand__mark" viewBox="0 0 48 58" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="dp-shell" x1="1.6" y1="29" x2="46.4" y2="29" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#18cbfd"/><stop offset=".5" stop-color="#0ab5fb"/><stop offset="1" stop-color="#0293f7"/>
+          </linearGradient>
+          <linearGradient id="dp-lens" x1="14" y1="14" x2="34" y2="49" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#07a4e8"/><stop offset="1" stop-color="#20c9fe"/>
+          </linearGradient>
+        </defs>
+        <path d="M24 .6 46.4 9v19.6c0 13-9.4 22-22.4 28.8C11 50.6 1.6 41.6 1.6 28.6V9L24 .6Z" fill="url(#dp-shell)"/>
+        <path d="M24 7.6 39.6 13.9v14.7c0 9.4-6.6 16-15.6 20.8-9-4.8-15.6-11.4-15.6-20.8V13.9L24 7.6Z" fill="#00235f"/>
+        <path d="M24 7.6 39.6 13.9v14.7c0 9.4-6.6 16-15.6 20.8V7.6Z" fill="#3c74ce" opacity=".62"/>
+        <rect x="13.8" y="15" width="8.4" height="33.6" rx="4.2" fill="url(#dp-lens)"/>
+        <circle cx="26" cy="26.8" r="12.1" fill="url(#dp-lens)"/>
+        <circle cx="26" cy="26.8" r="5" fill="#0a2a66" opacity=".16"/>
+        <circle cx="34.6" cy="12.8" r="1.7" fill="#bfe9ff" opacity=".85"/>
+      </svg>
+            <span class="brand__text"><span class="brand__name">CAMERAMIENBAC</span><span class="brand__sub">AI &amp; SMART</span></span>
+          </span>
+          <div class="slogan__body">
+            <p class="slogan__title">Dự án tiếp theo có thể là của bạn</p>
+            <ul class="slogan__points">
+              <li><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6 4 5.8v6.1c0 5 3.4 9.2 8 10.4 4.6-1.2 8-5.4 8-10.4V5.8l-8-3.2Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg>Chuyên nghiệp</li>
+              <li><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.6 12.4 6.2 8.8h3.6l2.2 2.2 2.2-2.2h3.6l3.6 3.6-3.4 3.4-2-2-1.6 1.6-1.4-1.4-1.4 1.4-1.6-1.6-2 2-3.4-3.4Z"/><path d="M6.2 8.8 9 6h6l2.8 2.8"/></svg>Uy tín</li>
+              <li><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M19.6 14.6a1.4 1.4 0 0 0 .3 1.5l.1.1a1.7 1.7 0 1 1-2.4 2.4l-.1-.1a1.4 1.4 0 0 0-1.5-.3 1.4 1.4 0 0 0-.9 1.3v.2a1.7 1.7 0 1 1-3.4 0v-.1a1.4 1.4 0 0 0-.9-1.3 1.4 1.4 0 0 0-1.5.3l-.1.1a1.7 1.7 0 1 1-2.4-2.4l.1-.1a1.4 1.4 0 0 0 .3-1.5 1.4 1.4 0 0 0-1.3-.9h-.2a1.7 1.7 0 1 1 0-3.4h.1a1.4 1.4 0 0 0 1.3-.9 1.4 1.4 0 0 0-.3-1.5l-.1-.1a1.7 1.7 0 1 1 2.4-2.4l.1.1a1.4 1.4 0 0 0 1.5.3h.1a1.4 1.4 0 0 0 .9-1.3v-.2a1.7 1.7 0 1 1 3.4 0v.1a1.4 1.4 0 0 0 .9 1.3 1.4 1.4 0 0 0 1.5-.3l.1-.1a1.7 1.7 0 1 1 2.4 2.4l-.1.1a1.4 1.4 0 0 0-.3 1.5v.1a1.4 1.4 0 0 0 1.3.9h.2a1.7 1.7 0 1 1 0 3.4h-.1a1.4 1.4 0 0 0-1.3.9Z"/></svg>Hiệu quả</li>
+              <li><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.4 14v-2a7.6 7.6 0 0 1 15.2 0v2"/><rect x="2.8" y="13.4" width="4" height="6" rx="1.6"/><rect x="17.2" y="13.4" width="4" height="6" rx="1.6"/><path d="M19.6 19.4a3 3 0 0 1-3 2.2h-2"/></svg>Hỗ trợ 24/7</li>
+            </ul>
           </div>
         </div>
       </div>
