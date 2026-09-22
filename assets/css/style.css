@@ -2332,3 +2332,6 @@ body.nav-locked { overflow: hidden; }
 
 .prj-empty { padding: 32px 0; text-align: center; font-size: 15px; color: #4b6a97; }
 .prj-empty a { color: var(--blue-600); font-weight: 600; }
+
+.btn.is-loading { opacity: .7; pointer-events: none; }
+.form-status { margin-top: 12px; padding: 12px 14px; border-radius: 8px; background: #e7f6ec; color: #1d7a3d; font-size: 14px; font-weight: 600; }

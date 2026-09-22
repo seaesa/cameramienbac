@@ -126,6 +126,39 @@
     }
   }
 
+  function initContactForm(root) {
+    var form = root.querySelector(".form-grid");
+    if (!form) return;
+    var button = form.querySelector('button[type="submit"]');
+    var status = root.getElementById("form-status");
+
+    // Form chưa nối backend/email thật (action="#") — đây chỉ là UX mô phỏng
+    // phía client. Cần nối API/email thật (vd Formspree hoặc backend riêng)
+    // trước khi release chính thức.
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (typeof form.checkValidity === "function" && !form.checkValidity()) {
+        if (typeof form.reportValidity === "function") form.reportValidity();
+        return;
+      }
+      if (button) {
+        button.disabled = true;
+        button.classList.add("is-loading");
+      }
+      window.setTimeout(function () {
+        if (button) {
+          button.disabled = false;
+          button.classList.remove("is-loading");
+        }
+        if (status) {
+          status.hidden = false;
+          status.textContent = "Cảm ơn bạn đã gửi yêu cầu! Đội ngũ Cameramienbac sẽ liên hệ lại trong thời gian sớm nhất.";
+        }
+        form.reset();
+      }, 900);
+    });
+  }
+
   function markCurrent(root) {
     var raw = location.pathname.split("/").pop() || "index.html";
     // Hỗ trợ cả URL sạch (/lien-he) và URL có .html (/lien-he.html) do cleanUrls
@@ -161,6 +194,7 @@
       initNav(document);
       markCurrent(document);
       initProjectFilter(document);
+      initContactForm(document);
       var yearEl = document.getElementById("footer-year");
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
     });
