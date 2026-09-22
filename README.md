@@ -23,6 +23,8 @@ toa-nha-thong-minh.html       Giải pháp › Tòa nhà thông minh
 truong-hoc-ai.html            Giải pháp › Trường học AI
 giai-phap-toan-dien.html      Giải pháp › Giải pháp toàn diện
 san-pham.html                 Sản phẩm
+aiot-platform.html            Sản phẩm › AIoT Platform
+trung-tam-ai.html             Giải pháp › Trung tâm AI
 du-an.html                    Dự án (có bộ lọc + 9 dự án mẫu)
 ve-chung-toi.html             Về chúng tôi
 tin-tuc.html                  Tin tức
@@ -66,8 +68,18 @@ menu trùng tên file đang mở.
 | Trang | Mức độ |
 |-------|--------|
 | `index.html` | Khớp pixel với `trang-chu.png` (xem phần dưới) |
-| 6 trang có file thiết kế | Bám **bố cục, nội dung và icon** theo ảnh thiết kế; kích thước/khoảng cách dùng lại design system của trang chủ thay vì đo từng pixel |
+| 8 trang có file thiết kế | Bám **bố cục, nội dung và icon** theo ảnh thiết kế; kích thước/khoảng cách dùng lại design system của trang chủ thay vì đo từng pixel |
 | `ve-chung-toi.html`, `tin-tuc.html` | Không có file thiết kế — tự dựng bằng đúng design system (token màu, font, component) |
+
+**Vị trí 2 trang mới trong menu**
+
+| Trang | Đặt ở | Lý do |
+|-------|-------|-------|
+| `aiot-platform.html` | **Sản phẩm › AIoT Platform** | Là nền tảng phần mềm; trong ảnh thiết kế menu đang active ở "Sản phẩm" |
+| `trung-tam-ai.html` | **Giải pháp › Trung tâm AI** | Bản chất là nhóm giải pháp AI; thêm vào dropdown sẵn có nên không phải thêm mục cấp 1 |
+
+Cả hai đều được thêm **link chéo**: `san-pham.html` có khối giới thiệu AIoT Platform,
+`ve-chung-toi.html` có khối giới thiệu Trung tâm AI.
 
 **Đã gỡ khỏi bản clone:**
 - Section *"Giải pháp toàn diện từ Cameramienbac"* trên trang chủ (nội dung nay ở `giai-phap-toan-dien.html`).
