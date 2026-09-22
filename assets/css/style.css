@@ -1021,6 +1021,7 @@ body.nav-locked { overflow: hidden; }
 .psec--last { padding-bottom: 48px; }
 
 .psec__head { margin-bottom: 20px; }
+.psec__head--spaced { margin-top: 28px; }
 
 .psec__title {
   font-size: 30px;
@@ -1314,6 +1315,8 @@ body.nav-locked { overflow: hidden; }
 .split__title { font-size: 26px; font-weight: 700; line-height: 1.2; }
 .split__title--sm { font-size: 20px; }
 .split__text { max-width: 360px; margin-top: 10px; font-size: 15px; line-height: 23px; color: #cfe2f7; }
+.split__text--wide { max-width: none; }
+.split__panel--about { background-image: url("../images/prj-2.jpg"); }
 
 .steps {
   display: flex;
