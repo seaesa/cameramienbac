@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 58" fill="none">
+  <defs>
+    <linearGradient id="fav-shell" x1="1.6" y1="29" x2="46.4" y2="29" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18cbfd"/>
+      <stop offset=".5" stop-color="#0ab5fb"/>
+      <stop offset="1" stop-color="#0293f7"/>
+    </linearGradient>
+    <linearGradient id="fav-lens" x1="14" y1="14" x2="34" y2="49" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07a4e8"/>
+      <stop offset="1" stop-color="#20c9fe"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 .6 46.4 9v19.6c0 13-9.4 22-22.4 28.8C11 50.6 1.6 41.6 1.6 28.6V9L24 .6Z" fill="url(#fav-shell)"/>
+  <path d="M24 7.6 39.6 13.9v14.7c0 9.4-6.6 16-15.6 20.8-9-4.8-15.6-11.4-15.6-20.8V13.9L24 7.6Z" fill="#00235f"/>
+  <path d="M24 7.6 39.6 13.9v14.7c0 9.4-6.6 16-15.6 20.8V7.6Z" fill="#3c74ce" opacity=".62"/>
+  <rect x="13.8" y="15" width="8.4" height="33.6" rx="4.2" fill="url(#fav-lens)"/>
+  <circle cx="26" cy="26.8" r="12.1" fill="url(#fav-lens)"/>
+  <circle cx="26" cy="26.8" r="5" fill="#0a2a66" opacity=".16"/>
+  <circle cx="34.6" cy="12.8" r="1.7" fill="#bfe9ff" opacity=".85"/>
+</svg>

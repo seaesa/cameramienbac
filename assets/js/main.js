@@ -159,6 +159,137 @@
     });
   }
 
+  function initChatWidget(root) {
+    var chatbox = root.getElementById("chatbox");
+    var toggle = root.getElementById("chatbtn-toggle");
+    var closeBtn = root.getElementById("chatbox-close");
+    var messages = root.getElementById("chatbox-messages");
+    var form = root.getElementById("chatbox-form");
+    var input = root.getElementById("chatbox-input");
+    var heroForm = root.getElementById("hero-agent-form");
+    var heroField = root.getElementById("hero-agent-field");
+    if (!chatbox || !toggle || !messages || !form || !input) return;
+
+    var REPLIES = [
+      { match: "tòa nhà", text: "Với tòa nhà văn phòng/chung cư, chúng tôi thường triển khai camera AI nhận diện khuôn mặt kiểm soát ra vào, phát hiện đám đông và cảnh báo hành vi bất thường. Bạn cho mình xin quy mô toà nhà (số tầng/căn hộ) để tư vấn cấu hình phù hợp nhé?" },
+      { match: "trường học", text: "Giải pháp trường học AI của chúng tôi hỗ trợ điểm danh tự động bằng khuôn mặt, chống gian lận thi cử và giám sát an ninh khuôn viên. Bạn đang quan tâm ở cấp học nào và quy mô bao nhiêu học sinh?" },
+      { match: "nâng cấp", text: "Camera hiện hữu của anh/chị có thể nâng cấp lên AI mà không cần thay mới toàn bộ — chỉ cần đầu ghi hỗ trợ AI hoặc box AI gắn thêm. Bạn cho mình biết đang dùng loại camera/đầu ghi gì để kiểm tra khả năng nâng cấp nhé?" },
+      { match: "aiot", text: "AIoT Platform của chúng tôi tích hợp camera, cảm biến IoT và dashboard vận hành tập trung cho Smart City/Smart Building. Bạn muốn triển khai ở quy mô nào (toà nhà đơn lẻ, khu đô thị hay thành phố)?" }
+    ];
+    var DEFAULT_REPLY = "Cảm ơn câu hỏi của bạn! Đội ngũ kỹ thuật Cameramienbac sẽ liên hệ tư vấn chi tiết sớm nhất. Trong lúc chờ, bạn có thể để lại số điện thoại hoặc xem thêm tại trang Liên hệ.";
+
+    function pickReply(text) {
+      var lower = text.toLowerCase();
+      for (var i = 0; i < REPLIES.length; i++) {
+        if (lower.indexOf(REPLIES[i].match) !== -1) return REPLIES[i].text;
+      }
+      return DEFAULT_REPLY;
+    }
+
+    function scrollToBottom() {
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function appendMessage(text, from) {
+      var bubble = document.createElement("div");
+      bubble.className = "chatbox__msg chatbox__msg--" + from;
+      bubble.textContent = text;
+      messages.appendChild(bubble);
+      scrollToBottom();
+    }
+
+    function sendMessage(text) {
+      text = (text || "").trim();
+      if (!text) return;
+      appendMessage(text, "user");
+
+      var typing = document.createElement("div");
+      typing.className = "chatbox__msg chatbox__msg--bot chatbox__msg--typing";
+      typing.innerHTML = "<i></i><i></i><i></i>";
+      messages.appendChild(typing);
+      scrollToBottom();
+
+      window.setTimeout(function () {
+        typing.remove();
+        appendMessage(pickReply(text), "bot");
+      }, 800);
+    }
+
+    function openChat(prefillText) {
+      chatbox.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      if (prefillText) {
+        sendMessage(prefillText);
+      } else {
+        input.focus();
+      }
+    }
+
+    function closeChat() {
+      chatbox.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (chatbox.hidden) {
+        openChat();
+      } else {
+        closeChat();
+      }
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        closeChat();
+      });
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if ((event.key === "Escape" || event.key === "Esc") && !chatbox.hidden) {
+        closeChat();
+      }
+    });
+
+    document.addEventListener("click", function (event) {
+      if (chatbox.hidden) return;
+      if (event.target.closest("#chatbox, #chatbtn-toggle, [data-chat-open], [data-chat-ask], #hero-agent-form")) return;
+      closeChat();
+    });
+
+    root.querySelectorAll("[data-chat-open]").forEach(function (el) {
+      el.addEventListener("click", function (event) {
+        event.preventDefault();
+        openChat();
+      });
+    });
+
+    root.querySelectorAll("[data-chat-ask]").forEach(function (el) {
+      el.addEventListener("click", function (event) {
+        event.preventDefault();
+        openChat(el.getAttribute("data-chat-ask"));
+      });
+    });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var text = input.value;
+      input.value = "";
+      if (chatbox.hidden) chatbox.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      sendMessage(text);
+    });
+
+    if (heroForm && heroField) {
+      heroForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var text = heroField.value;
+        heroField.value = "";
+        openChat(text);
+      });
+    }
+  }
+
   function markCurrent(root) {
     var raw = location.pathname.split("/").pop() || "index.html";
     // Hỗ trợ cả URL sạch (/lien-he) và URL có .html (/lien-he.html) do cleanUrls
@@ -195,6 +326,7 @@
       markCurrent(document);
       initProjectFilter(document);
       initContactForm(document);
+      initChatWidget(document);
       var yearEl = document.getElementById("footer-year");
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
     });
