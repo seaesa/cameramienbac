@@ -183,6 +183,27 @@
     });
   }
 
+  function initNewsFilter(root) {
+    var bar = root.querySelector(".news-filter");
+    if (!bar) return;
+    var cards = Array.prototype.slice.call(root.querySelectorAll(".news-list .news"));
+    bar.addEventListener("click", function (event) {
+      var btn = event.target.closest("[data-news-filter]");
+      if (!btn) return;
+      var topic = btn.getAttribute("data-news-filter");
+      bar.querySelectorAll("button").forEach(function (b) {
+        b.classList.toggle("is-active", b === btn);
+        b.setAttribute("aria-selected", b === btn ? "true" : "false");
+      });
+      cards.forEach(function (card) {
+        var tag = card.querySelector(".news__tag");
+        card.hidden = topic !== "all" && (!tag || tag.textContent.trim() !== topic);
+        // the featured layout only makes sense when it's not the only card
+        card.classList.toggle("news--flat", topic !== "all");
+      });
+    });
+  }
+
   function initContactForm(root) {
     var form = root.querySelector(".form-grid");
     if (!form) return;
@@ -393,6 +414,7 @@
       initNav(document);
       markCurrent(document);
       initProjectFilter(document);
+      initNewsFilter(document);
       initContactForm(document);
       initChatWidget(document);
       var yearEl = document.getElementById("footer-year");

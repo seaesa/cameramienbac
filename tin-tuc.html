@@ -28,67 +28,65 @@
       </ul>
     </div>
   </section>
-  <section class="psec">
+  <section class="psec psec--last">
     <div class="container">
-      <div class="psec__head">
-        <h2 class="psec__title">Bài viết nổi bật</h2>
-        
+      <div class="news-filter" role="tablist" aria-label="Chủ đề">
+        <button type="button" class="is-active" data-news-filter="all">Tất cả</button>
+        <button type="button" data-news-filter="Giải pháp">Giải pháp</button><button type="button" data-news-filter="Công nghệ">Công nghệ</button><button type="button" data-news-filter="Dự án">Dự án</button><button type="button" data-news-filter="Giáo dục">Giáo dục</button><button type="button" data-news-filter="Hướng dẫn">Hướng dẫn</button><button type="button" data-news-filter="An ninh">An ninh</button>
       </div>
-      <article class="news news--wide">
-        <div class="news__media"><img src="assets/images/news-feat.jpg" alt="5 dấu hiệu cho thấy hệ thống camera của bạn đã lỗi thời" loading="lazy"></div>
-        <div class="news__body">
-          <p class="news__meta"><span class="tag">Giải pháp</span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15.6" rx="2"/><path d="M3.4 9.6h17.2M8 3v4M16 3v4"/></svg>12/09/2025</p>
-          <h3 class="news__title">5 dấu hiệu cho thấy hệ thống camera của bạn đã lỗi thời</h3>
-          <p class="news__text">Hình ảnh mờ ban đêm, không tìm được cảnh quay cũ, không có cảnh báo chủ động… Đây là lúc nên cân nhắc nâng cấp lên camera AI.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-  <section class="psec psec--tint psec--last">
-    <div class="container">
-      <div class="psec__head">
-        <h2 class="psec__title">Bài viết mới nhất</h2>
-        <p class="psec__lead">Những nội dung được cập nhật gần đây nhất từ đội ngũ kỹ thuật Cameramienbac.</p>
-      </div>
-      <div class="grid grid--3">
-        <article class="news">
-          <div class="news__media"><img src="assets/images/ai-news-2.jpg" alt="Nhận diện khuôn mặt hoạt động thế nào trong thực tế?" loading="lazy"></div>
+      <div class="news-list">
+        <article class="news news--feat">
+          <a class="news__media" href="lien-he" tabindex="-1" aria-hidden="true"><img src="assets/images/news-1.jpg" alt="" loading="lazy"><span class="news__tag">Giải pháp</span></a>
           <div class="news__body">
-            <p class="news__meta"><span class="tag">Công nghệ</span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15.6" rx="2"/><path d="M3.4 9.6h17.2M8 3v4M16 3v4"/></svg>02/09/2025</p>
-            <h3 class="news__title">Nhận diện khuôn mặt hoạt động thế nào trong thực tế?</h3>
-            <p class="news__text">Từ khâu thu hình, trích đặc trưng đến so khớp — và vì sao ánh sáng, góc đặt camera quyết định 80% độ chính xác.</p>
+            <p class="news__meta"><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15" rx="1.6"/><path d="M3.4 9.4h17.2M8 3v3.6M16 3v3.6"/></svg>12/09/2025</span><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.4 2"/></svg>6 phút đọc</span></p>
+            <h3 class="news__title"><a href="lien-he">5 dấu hiệu cho thấy hệ thống camera của bạn đã lỗi thời</a></h3>
+            <p class="news__text">Hình ảnh mờ ban đêm, không tìm được cảnh quay cũ, không có cảnh báo chủ động… Đây là lúc nên cân nhắc nâng cấp lên camera AI.</p>
+            <span class="news__more">Đọc tiếp <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span>
           </div>
         </article>
         <article class="news">
-          <div class="news__media"><img src="assets/images/prj-9.jpg" alt="Bàn giao hệ thống 300 camera cho nhà máy tại Bắc Ninh" loading="lazy"></div>
+          <a class="news__media" href="lien-he" tabindex="-1" aria-hidden="true"><img src="assets/images/news-2.jpg" alt="" loading="lazy"><span class="news__tag">Công nghệ</span></a>
           <div class="news__body">
-            <p class="news__meta"><span class="tag">Dự án</span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15.6" rx="2"/><path d="M3.4 9.6h17.2M8 3v4M16 3v4"/></svg>25/08/2025</p>
-            <h3 class="news__title">Bàn giao hệ thống 300 camera cho nhà máy tại Bắc Ninh</h3>
+            <p class="news__meta"><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15" rx="1.6"/><path d="M3.4 9.4h17.2M8 3v3.6M16 3v3.6"/></svg>02/09/2025</span><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.4 2"/></svg>5 phút đọc</span></p>
+            <h3 class="news__title"><a href="lien-he">Nhận diện khuôn mặt hoạt động thế nào trong thực tế?</a></h3>
+            <p class="news__text">Từ khâu thu hình, trích đặc trưng đến so khớp, và vì sao ánh sáng, góc đặt camera quyết định phần lớn độ chính xác.</p>
+            <span class="news__more">Đọc tiếp <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span>
+          </div>
+        </article>
+        <article class="news">
+          <a class="news__media" href="lien-he" tabindex="-1" aria-hidden="true"><img src="assets/images/news-3.jpg" alt="" loading="lazy"><span class="news__tag">Dự án</span></a>
+          <div class="news__body">
+            <p class="news__meta"><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15" rx="1.6"/><path d="M3.4 9.4h17.2M8 3v3.6M16 3v3.6"/></svg>25/08/2025</span><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.4 2"/></svg>4 phút đọc</span></p>
+            <h3 class="news__title"><a href="lien-he">Bàn giao hệ thống 300 camera cho nhà máy tại Bắc Ninh</a></h3>
             <p class="news__text">Toàn bộ nhà xưởng, cổng ra vào và kho vận được giám sát tập trung, tích hợp kiểm soát nhân sự theo ca.</p>
+            <span class="news__more">Đọc tiếp <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span>
           </div>
         </article>
         <article class="news">
-          <div class="news__media"><img src="assets/images/prj-4.jpg" alt="Điểm danh bằng AI: trường học tiết kiệm được bao nhiêu thời gian?" loading="lazy"></div>
+          <a class="news__media" href="lien-he" tabindex="-1" aria-hidden="true"><img src="assets/images/news-4.jpg" alt="" loading="lazy"><span class="news__tag">Giáo dục</span></a>
           <div class="news__body">
-            <p class="news__meta"><span class="tag">Giáo dục</span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15.6" rx="2"/><path d="M3.4 9.6h17.2M8 3v4M16 3v4"/></svg>14/08/2025</p>
-            <h3 class="news__title">Điểm danh bằng AI: trường học tiết kiệm được bao nhiêu thời gian?</h3>
+            <p class="news__meta"><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15" rx="1.6"/><path d="M3.4 9.4h17.2M8 3v3.6M16 3v3.6"/></svg>14/08/2025</span><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.4 2"/></svg>4 phút đọc</span></p>
+            <h3 class="news__title"><a href="lien-he">Điểm danh bằng AI: trường học tiết kiệm được bao nhiêu thời gian?</a></h3>
             <p class="news__text">Một khảo sát nhỏ tại 12 trường cho thấy giáo viên tiết kiệm trung bình 25 phút mỗi ngày nhờ điểm danh tự động.</p>
+            <span class="news__more">Đọc tiếp <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span>
           </div>
         </article>
         <article class="news">
-          <div class="news__media"><img src="assets/images/prd-dev-4.jpg" alt="Chọn ổ cứng cho đầu ghi: bao nhiêu TB là đủ?" loading="lazy"></div>
+          <a class="news__media" href="lien-he" tabindex="-1" aria-hidden="true"><img src="assets/images/news-5.jpg" alt="" loading="lazy"><span class="news__tag">Hướng dẫn</span></a>
           <div class="news__body">
-            <p class="news__meta"><span class="tag">Hướng dẫn</span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15.6" rx="2"/><path d="M3.4 9.6h17.2M8 3v4M16 3v4"/></svg>05/08/2025</p>
-            <h3 class="news__title">Chọn ổ cứng cho đầu ghi: bao nhiêu TB là đủ?</h3>
-            <p class="news__text">Công thức tính dung lượng theo số camera, độ phân giải, số ngày lưu trữ — kèm bảng tra nhanh cho các cấu hình phổ biến.</p>
+            <p class="news__meta"><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15" rx="1.6"/><path d="M3.4 9.4h17.2M8 3v3.6M16 3v3.6"/></svg>05/08/2025</span><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.4 2"/></svg>7 phút đọc</span></p>
+            <h3 class="news__title"><a href="lien-he">Chọn ổ cứng cho đầu ghi: bao nhiêu TB là đủ?</a></h3>
+            <p class="news__text">Công thức tính dung lượng theo số camera, độ phân giải, số ngày lưu trữ, kèm bảng tra nhanh cho các cấu hình phổ biến.</p>
+            <span class="news__more">Đọc tiếp <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span>
           </div>
         </article>
         <article class="news">
-          <div class="news__media"><img src="assets/images/ai-use-1.jpg" alt="Phòng chống trộm cắp tại kho hàng bằng cảnh báo chủ động" loading="lazy"></div>
+          <a class="news__media" href="lien-he" tabindex="-1" aria-hidden="true"><img src="assets/images/news-6.jpg" alt="" loading="lazy"><span class="news__tag">An ninh</span></a>
           <div class="news__body">
-            <p class="news__meta"><span class="tag">An ninh</span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15.6" rx="2"/><path d="M3.4 9.6h17.2M8 3v4M16 3v4"/></svg>28/07/2025</p>
-            <h3 class="news__title">Phòng chống trộm cắp tại kho hàng bằng cảnh báo chủ động</h3>
+            <p class="news__meta"><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.4" y="5" width="17.2" height="15" rx="1.6"/><path d="M3.4 9.4h17.2M8 3v3.6M16 3v3.6"/></svg>28/07/2025</span><span><svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.4 2"/></svg>5 phút đọc</span></p>
+            <h3 class="news__title"><a href="lien-he">Phòng chống trộm cắp tại kho hàng bằng cảnh báo chủ động</a></h3>
             <p class="news__text">Kết hợp camera AI với cảm biến và đèn còi để xử lý sự cố ngay khi phát hiện, thay vì chỉ xem lại sau khi mất.</p>
+            <span class="news__more">Đọc tiếp <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></span>
           </div>
         </article>
       </div>
