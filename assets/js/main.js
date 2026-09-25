@@ -11,8 +11,21 @@
     var toggle = root.querySelector(".nav-toggle");
     var nav = root.querySelector(".main-nav");
     var header = root.querySelector(".site-header");
+    var mobileMq = window.matchMedia("(max-width: 1023px)");
+    var groups = Array.prototype.slice.call(root.querySelectorAll(".nav-group"));
+
+    function setGroup(group, open) {
+      var link = group.querySelector(".nav-link");
+      group.classList.toggle("is-open", open);
+      if (link) link.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    function closeGroups(except) {
+      groups.forEach(function (g) { if (g !== except) setGroup(g, false); });
+    }
 
     function closeMenu() {
+      closeGroups();
       if (!nav || !nav.classList.contains("is-open")) return;
       nav.classList.remove("is-open");
       document.body.classList.remove("nav-locked");
@@ -22,26 +35,23 @@
     function openMenu() {
       if (!nav) return;
       nav.classList.add("is-open");
+      nav.scrollTop = 0;
       document.body.classList.add("nav-locked");
       if (toggle) toggle.setAttribute("aria-expanded", "true");
     }
 
     if (toggle && nav) {
       toggle.addEventListener("click", function () {
-        if (nav.classList.contains("is-open")) {
-          closeMenu();
-        } else {
-          openMenu();
-        }
+        if (nav.classList.contains("is-open")) closeMenu();
+        else openMenu();
       });
     }
 
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" || event.key === "Esc") {
+        var wasOpen = nav && nav.classList.contains("is-open");
         closeMenu();
-        root.querySelectorAll(".nav-group.is-open").forEach(function (group) {
-          group.classList.remove("is-open");
-        });
+        if (wasOpen && toggle) toggle.focus();
       }
     });
 
@@ -51,16 +61,24 @@
       closeMenu();
     });
 
-    // On touch/narrow layouts the first tap opens the submenu instead of navigating.
-    root.querySelectorAll(".nav-group").forEach(function (group) {
+    // Leaving the mobile layout (rotate / resize) must not leave the page
+    // scroll-locked behind a hidden menu.
+    var onBreakpoint = function (e) { if (!e.matches) closeMenu(); };
+    if (mobileMq.addEventListener) mobileMq.addEventListener("change", onBreakpoint);
+    else if (mobileMq.addListener) mobileMq.addListener(onBreakpoint);
+
+    // Mobile: a parent item is a disclosure toggle (tap again to close); its
+    // overview page is reachable through the first link inside the submenu.
+    // Desktop keeps the hover dropdown and the parent link navigates.
+    groups.forEach(function (group) {
       var link = group.querySelector(".nav-link");
       if (!link) return;
       link.addEventListener("click", function (event) {
-        if (window.matchMedia("(max-width: 1023px)").matches && !group.classList.contains("is-open")) {
-          event.preventDefault();
-          group.classList.add("is-open");
-          group.setAttribute("aria-expanded", "true");
-        }
+        if (!mobileMq.matches) return;
+        event.preventDefault();
+        var open = !group.classList.contains("is-open");
+        closeGroups(group);
+        setGroup(group, open);
       });
     });
   }
@@ -77,6 +95,8 @@
     var yearSelect = root.getElementById("f-year");
     var submitBtn = filterPanel.querySelector("button");
     var cards = Array.prototype.slice.call(grid.querySelectorAll(".prj"));
+    var countEl = root.getElementById("prj-count");
+    var defaultCount = countEl ? countEl.textContent : "";
 
     function apply() {
       var checked = catBoxes.filter(function (box) {
@@ -97,6 +117,22 @@
       });
 
       if (empty) empty.hidden = visibleCount !== 0;
+
+      if (countEl) {
+        var filtered = checked.length > 0 || city || year;
+        if (filtered) {
+          countEl.innerHTML = "Tìm thấy <b>" + visibleCount + " / " + cards.length +
+            "</b> dự án phù hợp với bộ lọc. <button type=\"button\" class=\"prj-reset\" data-prj-reset>Xóa bộ lọc</button>";
+        } else {
+          countEl.textContent = defaultCount;
+        }
+      }
+    }
+
+    // Criteria only take effect when the user presses "Tìm kiếm"; until then
+    // the button is flagged so it's clear there are unapplied changes.
+    function markDirty() {
+      if (submitBtn) submitBtn.classList.add("is-dirty");
     }
 
     catBoxes.forEach(function (box) {
@@ -112,18 +148,39 @@
         }
         var anyChecked = catBoxes.some(function (b) { return b.checked; });
         if (!anyChecked && allBox) allBox.checked = true;
-        apply();
+        markDirty();
       });
     });
 
-    if (citySelect) citySelect.addEventListener("change", apply);
-    if (yearSelect) yearSelect.addEventListener("change", apply);
+    if (citySelect) citySelect.addEventListener("change", markDirty);
+    if (yearSelect) yearSelect.addEventListener("change", markDirty);
+
+    function reset() {
+      catBoxes.forEach(function (b) { b.checked = b === allBox; });
+      if (citySelect) citySelect.selectedIndex = 0;
+      if (yearSelect) yearSelect.selectedIndex = 0;
+      apply();
+      if (submitBtn) submitBtn.classList.remove("is-dirty");
+    }
+
     if (submitBtn) {
       submitBtn.addEventListener("click", function (event) {
         event.preventDefault();
         apply();
+        submitBtn.classList.remove("is-dirty");
+        // On stacked (mobile) layouts the results sit below the filter panel.
+        if (window.matchMedia("(max-width: 1023px)").matches) {
+          (countEl || grid).scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       });
     }
+
+    root.addEventListener("click", function (event) {
+      if (event.target.closest("[data-prj-reset]")) {
+        event.preventDefault();
+        reset();
+      }
+    });
   }
 
   function initContactForm(root) {
@@ -201,6 +258,8 @@
     function sendMessage(text) {
       text = (text || "").trim();
       if (!text) return;
+      var chips = root.getElementById("chatbox-chips");
+      if (chips) chips.remove();
       appendMessage(text, "user");
 
       var typing = document.createElement("div");
@@ -220,7 +279,8 @@
       toggle.setAttribute("aria-expanded", "true");
       if (prefillText) {
         sendMessage(prefillText);
-      } else {
+      } else if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        // On touch devices focusing would pop the keyboard over the suggestions.
         input.focus();
       }
     }
@@ -299,7 +359,15 @@
       var target = link.getAttribute("href");
       if (!target || target.charAt(0) === "#") return;
       var norm = target.split("/").pop().split("?")[0].split("#")[0].replace(/\.html$/, "") || "index";
-      link.classList.toggle("is-active", norm === here && link.classList.contains("nav-link"));
+      var match = norm === here;
+      if (link.classList.contains("nav-link")) {
+        link.classList.toggle("is-active", match);
+      } else if (match) {
+        link.classList.add("is-current");
+        var group = link.closest(".nav-group");
+        var parent = group && group.querySelector(".nav-link");
+        if (parent) parent.classList.add("is-active");
+      }
     });
   }
 
